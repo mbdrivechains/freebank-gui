@@ -7,8 +7,7 @@ drivechain (BIP 300/301, slot 130).
 
 Built with [Tauri](https://tauri.app) (Rust backend + Svelte frontend). The same web
 frontend doubles as an installable **PWA**, so the wallet runs as a desktop app, a
-direct-download binary, or a web page — **no app store required** (sustainable outside
-walled gardens such as the Apple ecosystem).
+direct-download binary, or a web page.
 
 ## Model: node-custodial, remote-controlled
 
@@ -27,10 +26,10 @@ first-class option in the UI but not wired in this build yet.)
 - Connect to a `freebankd` node via RPC (local / Tailscale / custom)
 - Balance led in **grams** (☉, launch scale, presentation-only) with the **ECX**
   settlement line; transaction history
-- Send and receive ECX; address generation
+- Send and receive gECX; address generation
 - **Notes** — hold / mint / send / redeem / demand, per issuing house
 - **Houses** — directory, registration, reserve attestation
-- **Clearing pools** — swap notes ↔ ECX, add/remove liquidity, LP positions
+- **Clearing pools** — swap notes ↔ gECX, add/remove liquidity, LP positions
 - **Bills of exchange** — issue / endorse / retire / claim escrow
 - (Planned) bearer par-redemption flow, advisory gold oracle, "Model B" light wallet
 
