@@ -1,0 +1,514 @@
+/* FreeBank Wallet - Global Styles */
+
+:root {
+  /* Dark theme (default) */
+  --bg-color: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-color: #ffffff;
+  --text-secondary: #b0b0b0;
+  --accent-color: #667eea;
+  --accent-secondary: #764ba2;
+  --border-color: #333;
+  --error-color: #f44336;
+  --success-color: #4caf50;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+#app {
+  height: 100%;
+  overflow-y: auto;
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+  min-height: 100%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+header .network {
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 4px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+nav button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+nav button:hover {
+  color: var(--text-color);
+}
+
+nav button.active {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.form input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* Buttons */
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Error messages */
+.error {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Node-custodial explainer on the connect screen */
+.custodial-note {
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.custodial-note strong {
+  color: var(--text-color);
+}
+
+/* Connection-mode picker (Local / Tailscale / Tor / Custom) */
+.conn-modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.conn-modes button {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.conn-modes button:hover {
+  color: var(--text-color);
+  border-color: var(--accent-color);
+  opacity: 1;
+}
+
+.conn-modes button.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.mode-help {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.mode-warn {
+  font-size: 12px;
+  color: #ff9800;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+/* PWA Security Warning */
+.pwa-warning {
+  background: rgba(255, 152, 0, 0.15);
+  border: 1px solid #ff9800;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.pwa-warning strong {
+  color: #ff9800;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.pwa-warning p {
+  color: #ffb74d;
+  font-size: 12px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.pwa-warning button {
+  background: transparent;
+  border: 1px solid #ff9800;
+  color: #ff9800;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.pwa-warning button:hover {
+  background: rgba(255, 152, 0, 0.2);
+}
+
+/* Muted text */
+.muted {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Transaction list */
+.tx-list {
+  margin: 0 -20px;
+}
+
+/* Address display */
+.address-display {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.address-display code {
+  flex: 1;
+  padding: 12px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.address-display button {
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* QR placeholder */
+.qr-placeholder {
+  width: 200px;
+  height: 200px;
+  margin: 16px auto;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+/* Notes (M1) */
+.notes-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.notes-head h2 {
+  margin-bottom: 0;
+}
+
+.link-btn {
+  background: transparent;
+  color: var(--accent-color);
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.link-btn:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.note-row {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.note-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-house {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.note-units {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--border-color);
+  color: var(--text-color);
+}
+
+.badge-o { background: rgba(76, 175, 80, 0.25); color: #7bd47f; }
+.badge-s { background: rgba(255, 152, 0, 0.2); color: #ffb74d; }
+.badge-d { background: rgba(255, 193, 7, 0.2); color: #ffd54f; }
+.badge-i { background: rgba(244, 67, 54, 0.2); color: #ef9a9a; }
+.badge-w { background: var(--border-color); color: var(--text-secondary); }
+
+/* Bill statuses: a=active r=retired d=defaulted x=disputed */
+.badge-bill-a { background: rgba(76, 175, 80, 0.25); color: #7bd47f; }
+.badge-bill-r { background: var(--border-color); color: var(--text-secondary); }
+.badge-bill-d { background: rgba(244, 67, 54, 0.2); color: #ef9a9a; }
+.badge-bill-x { background: rgba(255, 152, 0, 0.2); color: #ffb74d; }
+
+.note-demanded {
+  font-size: 12px;
+  color: #ffb74d;
+  margin-top: 6px;
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.note-actions button {
+  flex: 1;
+  padding: 8px;
+  font-size: 13px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.note-actions button:not(:disabled):hover {
+  border-color: var(--accent-color);
+  opacity: 1;
+}
+
+.note-form {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.note-form input {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-color);
+  font-size: 15px;
+}
+
+.note-form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.note-form-actions button {
+  flex: 1;
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Houses (M2) */
+.house-stats {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-family: monospace;
+}
+
+.house-stats .stat-label {
+  display: inline-block;
+  min-width: 140px;
+  color: var(--text-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.util-bar {
+  margin-top: 10px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.util-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  main {
+    padding: 12px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav button {
+    padding: 8px;
+    font-size: 12px;
+  }
+}

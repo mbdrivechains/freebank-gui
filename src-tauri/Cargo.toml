@@ -1,0 +1,37 @@
+[package]
+name = "freebank-wallet"
+version = "0.1.0"
+description = "Cross-platform wallet for the FreeBank drivechain (BIP 300/301, slot 130)"
+authors = ["FreeBank"]
+license = "MIT"
+repository = "https://github.com/mbdrivechains/freebank-gui"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-shell = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+base64 = "0.22"
+thiserror = "1"
+
+# For secure storage
+keyring = "3"
+
+# For QR code generation (optional, can also use JS library)
+# qrcode = "0.14"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
